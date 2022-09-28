@@ -1,0 +1,17 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://quoll.gearon.org/data/demo.ttl#> .
+
+:Person a rdfs:Class .
+:Mortal a rdfs:Class .
+
+:Parent a rdfs:Class .
+
+:hasChild a rdfs:Property .
+:hasChild rdfs:domain :Parent .
+:hasChild rdfs:range :Person .
+
+:mary a :Person .
+:jane a :Person .
+
+:mary :hasChild :jane .
+:jane :hasChild :kathy .
