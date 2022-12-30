@@ -1,0 +1,791 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix : <http://quoll.gearon.org/data/numbers#>.
+
+<http://quoll.gearon.org/data/numbers.ttl> a owl:Ontology ;
+    dc:title "Paula's Number ontology" .
+
+:Number a owl:Class ;
+    rdfs:label "Number" ;
+    dc:description "The class of all numbers." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Number>, <http://dbpedia.org/resource/Numbers>.
+
+:RealNumber rdfs:subClassOf :Number ;
+    rdfs:label "Real Number" ;
+    dc:description "The class of all real numbers." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Real_number>, <http://dbpedia.org/resource/Real_Numbers>.
+
+:CardinalNumber rdfs:subClassOf :RealNumber ;
+    rdfs:label "Cardinal Number" ;
+    dc:description "The class of all cardinal numbers." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Cardinal_number>, <http://dbpedia.org/resource/Cardinal_Number>.
+
+:NaturalNumber rdfs:subClassOf :CardinalNumber ;
+    rdfs:label "Natural Number" ;
+    dc:description "The class of all natural numbers." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Natural_number>, <http://dbpedia.org/resource/Natural_Numbers>.
+
+:AlephNumber rdfs:subClassOf :CardinalNumber ;
+    rdfs:label "Aleph Number" ;
+    dc:description "The class of all infinite cardinal numbers of well ordered sets." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Aleph_number>, <http://dbpedia.org/resource/Aleph_number>.
+
+:PrimeNumber rdfs:subClassOf :NaturalNumber ;
+    rdfs:label "Prime Number" ;
+    dc:description "The class of all natural numbers divisible only by 1 and itself." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Prime_number>, <http://dbpedia.org/resource/Prime_number>.
+
+:TriangularNumber rdfs:subClassOf :NaturalNumber ;
+    rdfs:label "Triangular Number" ;
+    dc:description "A triangular number or triangle number counts objects arranged in an equilateral triangle." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Triangular_number>, <http://dbpedia.org/resource/Triangular_number>.
+
+:SquareNumber rdfs:subClassOf :NaturalNumber ;
+    rdfs:label "Square Number" ;
+    dc:description "A square number or perfect square is an integer that is the square of an integer." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Square_number>, <http://dbpedia.org/resource/Square_number>.
+
+:PerfectNumber rdfs:subClassOf :NaturalNumber ;
+    rdfs:label "Perfect Number" ;
+    dc:description "A perfect number is a positive integer that is equal to the sum of its positive divisors, excluding the number itself." ;
+    rdfs:seeAlso <https://en.wikipedia.org/wiki/Perfect_number>, <http://dbpedia.org/resource/Perfect_number>.
+
+:roman rdfs:subPropertyOf skos:note ;
+    rdfs:label "Roman Numeral"
+    rdfs:comment "The roman numeral represenation of a Natural number." ;
+    rdfs:domain :NaturalNumber ;
+    rdfs:range rdfs:Literal .
+
+:square a rdf:Property;
+    rdfs:label "Square"
+    rdfs:comment "The square of a number." ;
+    rdfs:domain :Number ;
+    rdfs:range :Number .
+
+:primeFactorization a rdf:Property;
+    rdfs:label "Factors"
+    rdfs:comment "The prime factors of a natural number." ;
+    rdfs:domain :NaturalNumber ;
+    rdfs:range rdf:List .
+
+:n1 a :NaturalNumber, :SquareNumber;
+    rdf:value 1;
+    rdfs:label "one"@en;
+    :roman "I";
+    :square :n1;
+    :primeFactorization (:n1) ;
+    dc:description "It's not strictly correct to say that 1 is the 'first number', because there are negative numbers and 0 and other numbers that are less than 1. But it is certainly the first number most of us encounter and probably the first number of which anyone ever thought. Now, who that guy or girl was is unknown, but their realising that we can have 1 of something or 2 of them or small bits of things that aren't really 1 thing is where this whole wacky caper called mathematics started.";
+    skos:note "Some things only happen once. Snails have sex only once in their lives. But see 12 to find out why, for a snail, the news isn't all bad.",
+        "We all know that 1 × 1 = 1 and 1 × 2 = 2. In fact, 1 × \U0001d45b = \U0001d45b when \U0001d45b is any number. As a result 1 is called the *multiplicative identity* (when you multiply anything by 1, its identity remains unchanged).",
+        "Once is how often every citizen of Kentucky is required by law to have a bath each year. But see 71 for good reasons why Kentucky law-makers should get tough on soap dodgers.",
+        "Kenny only survived 1 episode of South Park in the first 2 seasons. You bastards! Take a look at 39.",
+        "There's a 1st for everything. The 1st toilet ever shown on television was on Leave it to Beaver. The 1st couple to be seen sharing a bed on a TV show were Lily and Herman Munster.";
+    :quiz "What is the name of the 1st official episode of South Park?";
+    dc:references :n12, :n71, :n39.
+
+:n2 a :NaturalNumber, :PrimeNumber;
+    rdf:value 2;
+    rdfs:label "two"@en;
+    :roman "II";
+    :square :n4;
+    :primeFactorization (:n2) ;
+    dc:description "Ahem: 1 + 1 = 2. Before you rush into Yeah, thanks for that, Adam, this is in fact an incredibly profound statement that, if you're being strict about it, takes tremendous effort to prove." ;
+    skos:note "Even numbers are defined as numbers divisible by 2. Two is the 1st even number.",
+        "Now, 15 = 3 × 5 and 77 = 7 × 11, but 2 can only be written as 2 = 1 × 2. Because of this, 2 is called a *prime number*. A prime number is a number that can't be written as any 2 whole numbers multiplied together except 1 and itself. Two is the only even prime number, because every other even number is divisible by 2, and so can't be prime.",
+        "The early Greeks weren't sure whether 2 was a number at all, because it has a beginning and an end, but no middle. Being an even number it was considered female, the 1st *female number*, in fact.",
+        "Yin and Yang are the 2 fundamental principles in the Chinese concept depicting the duality of life. Also, the 2 small sticks used in the I Ching are a binary system. Lots of religions are dualistic, like Zoroastrianism, the ancient Iranian religion with its Ahura Mazda, the god of light and goodness, and Ahriman, the dark, evil principle.",
+        "Of course, 2 is the basis of the *binary system*. In 1725 Basile Bouchon invented a device consisting of a roll of perforated paper punched with holes that could control the threads on a mechanical loom. The same idea was used in the pianola. Then Charles Babbage used the system in his Analytical Engine (also see 79). Thanks to binary notation, today's analytical engines can do all kinds of things, even make green stuff: ask Bill Gates.",
+        "'You Only Live Twice' was sung by Nancy Sinatra and was the theme music to the James
+Bond movie of the same name. 'Two Tribes', released in 1984, was Frankie Goes to Hollywood's 2nd single. Like their 1st, 'Relax', it went better than Number 2 on the charts, getting to Number 1.",
+        "It takes 2 to tango, and 8 to quadrille, but you only need 1 buffoon in a cowboy hat to start people linedancing." .
+
+:n3 a :NaturalNumber, :TriangularNumber, :PrimeNumber;
+    rdf:value 3;
+    rdfs:label "three"@en;
+    :roman "III";
+    :square :n9;
+    :primeFactorization (:n3).
+
+:n4 a :NaturalNumber, :SquareNumber;
+    rdf:value 4;
+    rdfs:label "four"@en;
+    :roman "IV";
+    :square :n16;
+    :primeFactorization (:n2 :n2).
+
+:n5 a :NaturalNumber, :PrimeNumber;
+    rdf:value 5;
+    rdfs:label "five"@en;
+    :roman "V";
+    :square :n25;
+    :primeFactorization (:n5).
+
+:n6 a :NaturalNumber, :PerfectNumber, :TriangularNumber;
+    rdf:value 6;
+    rdfs:label "six"@en;
+    :roman "VI";
+    :square :n36;
+    :primeFactorization (:n2 :n3).
+
+:n7 a :NaturalNumber, :PrimeNumber;
+    rdf:value 7;
+    rdfs:label "seven"@en;
+    :roman "VII";
+    :square :n49;
+    :primeFactorization (:n7).
+
+:n8 a :NaturalNumber;
+    rdf:value 8;
+    rdfs:label "eight"@en;
+    :roman "VIII";
+    :square :n64;
+    :primeFactorization (:n2 :n2 :n2).
+
+:n9 a :NaturalNumber, :SquareNumber;
+    rdf:value 9;
+    rdfs:label "nine"@en;
+    :roman "IX";
+    :square :n81;
+    :primeFactorization (:n3 :n3).
+
+:n10 a :NaturalNumber, :TriangularNumber;
+    rdf:value 10;
+    rdfs:label "ten"@en;
+    :roman "X";
+    :square :n100;
+    :primeFactorization (:n2 :n5).
+
+:n11 a :NaturalNumber, :PrimeNumber;
+    rdf:value 11;
+    rdfs:label "eleven"@en;
+    :roman "XI";
+    :square :n121;
+    :primeFactorization (:n11).
+
+:n12 a :NaturalNumber;
+    rdf:value 12;
+    rdfs:label "twelve"@en;
+    :roman "XII";
+    :square :n144;
+    :primeFactorization (:n2 :n2 :n3).
+
+:n13 a :NaturalNumber, :PrimeNumber;
+    rdf:value 13;
+    rdfs:label "thirteen"@en;
+    :roman "XIII";
+    :square :n169;
+    :primeFactorization (:n13).
+
+:n14 a :NaturalNumber;
+    rdf:value 14;
+    rdfs:label "fourteen"@en;
+    :roman "XIV";
+    :square :n196;
+    :primeFactorization (:n2 :n7).
+
+:n15 a :NaturalNumber, :TriangularNumber;
+    rdf:value 15;
+    rdfs:label "fifteen"@en;
+    :roman "XV";
+    :square :n225;
+    :primeFactorization (:n3 :n5).
+
+:n16 a :NaturalNumber, :SquareNumber;
+    rdf:value 16;
+    rdfs:label "sixteen"@en;
+    :roman "XVI";
+    :square :n256;
+    :primeFactorization (:n2 :n2 :n2 :n2).
+
+:n17 a :NaturalNumber, :PrimeNumber;
+    rdf:value 17;
+    rdfs:label "seventeen"@en;
+    :roman "XVII";
+    :square :n289;
+    :primeFactorization (:n17).
+
+:n18 a :NaturalNumber;
+    rdf:value 18;
+    rdfs:label "eighteen"@en;
+    :roman "XVIII";
+    :square :n324;
+    :primeFactorization (:n2 :n3 :n3).
+
+:n19 a :NaturalNumber, :PrimeNumber;
+    rdf:value 19;
+    rdfs:label "nineteen"@en;
+    :roman "XIX";
+    :square :n361;
+    :primeFactorization (:n19).
+
+:n20 a :NaturalNumber;
+    rdf:value 20;
+    rdfs:label "twenty"@en;
+    :roman "XX";
+    :square :n400;
+    :primeFactorization (:n2 :n2 :n5).
+
+:n21 a :NaturalNumber, :TriangularNumber;
+    rdf:value 21;
+    rdfs:label "twenty-one"@en;
+    :roman "XXI";
+    :square :n441;
+    :primeFactorization (:n3 :n7).
+
+:n22 a :NaturalNumber;
+    rdf:value 22;
+    rdfs:label "twenty-two"@en;
+    :roman "XXII";
+    :square :n484;
+    :primeFactorization (:n2 :n11).
+
+:n23 a :NaturalNumber, :PrimeNumber;
+    rdf:value 23;
+    rdfs:label "twenty-three"@en;
+    :roman "XXIII";
+    :square :n529;
+    :primeFactorization (:n23).
+
+:n24 a :NaturalNumber;
+    rdf:value 24;
+    rdfs:label "twenty-four"@en;
+    :roman "XXIV";
+    :square :n576;
+    :primeFactorization (:n2 :n2 :n2 :n3).
+
+:n25 a :NaturalNumber, :SquareNumber;
+    rdf:value 25;
+    rdfs:label "twenty-five"@en;
+    :roman "XXV";
+    :square :n625;
+    :primeFactorization (:n5 :n5).
+
+:n26 a :NaturalNumber;
+    rdf:value 26;
+    rdfs:label "twenty-six"@en;
+    :roman "XXVI";
+    :square :n676;
+    :primeFactorization (:n2 :n13).
+
+:n27 a :NaturalNumber;
+    rdf:value 27;
+    rdfs:label "twenty-seven"@en;
+    :roman "XXVII";
+    :square :n729;
+    :primeFactorization (:n3 :n3 :n3).
+
+:n28 a :NaturalNumber, :PerfectNumber, :TriangularNumber;
+    rdf:value 28;
+    rdfs:label "twenty-eight"@en;
+    :roman "XXVIII";
+    :square :n784;
+    :primeFactorization (:n2 :n2 :n7).
+
+:n29 a :NaturalNumber, :PrimeNumber;
+    rdf:value 29;
+    rdfs:label "twenty-nine"@en;
+    :roman "XXIX";
+    :square :n841;
+    :primeFactorization (:n29).
+
+:n30 a :NaturalNumber;
+    rdf:value 30;
+    rdfs:label "thirty"@en;
+    :roman "XXX";
+    :square :n900;
+    :primeFactorization (:n2 :n3 :n5).
+
+:n31 a :NaturalNumber, :PrimeNumber;
+    rdf:value 31;
+    rdfs:label "thirty-one"@en;
+    :roman "XXXI";
+    :square :n961;
+    :primeFactorization (:n31).
+
+:n32 a :NaturalNumber;
+    rdf:value 32;
+    rdfs:label "thirty-two"@en;
+    :roman "XXXII";
+    :square :n1024;
+    :primeFactorization (:n2 :n2 :n2 :n2 :n2).
+
+:n33 a :NaturalNumber;
+    rdf:value 33;
+    rdfs:label "thirty-three"@en;
+    :roman "XXXIII";
+    :square :n1089;
+    :primeFactorization (:n3 :n11).
+
+:n34 a :NaturalNumber;
+    rdf:value 34;
+    rdfs:label "thirty-four"@en;
+    :roman "XXXIV";
+    :square :n1156;
+    :primeFactorization (:n2 :n17).
+
+:n35 a :NaturalNumber;
+    rdf:value 35;
+    rdfs:label "thirty-five"@en;
+    :roman "XXXV";
+    :square :n1225;
+    :primeFactorization (:n5 :n7).
+
+:n36 a :NaturalNumber, :TriangularNumber, :SquareNumber;
+    rdf:value 36;
+    rdfs:label "thirty-six"@en;
+    :roman "XXXVI";
+    :square :n1296;
+    :primeFactorization (:n2 :n2 :n3 :n3).
+
+:n37 a :NaturalNumber, :PrimeNumber;
+    rdf:value 37;
+    rdfs:label "thirty-seven"@en;
+    :roman "XXXVII";
+    :square :n1369;
+    :primeFactorization (:n37).
+
+:n38 a :NaturalNumber;
+    rdf:value 38;
+    rdfs:label "thirty-eight"@en;
+    :roman "XXXVIII";
+    :square :n1444;
+    :primeFactorization (:n2 :n19).
+
+:n39 a :NaturalNumber;
+    rdf:value 39;
+    rdfs:label "thirty-nine"@en;
+    :roman "XXXIX";
+    :square :n1521;
+    :primeFactorization (:n3 :n13).
+
+:n40 a :NaturalNumber;
+    rdf:value 40;
+    rdfs:label "forty"@en;
+    :roman "XL";
+    :square :n1600;
+    :primeFactorization (:n2 :n2 :n2 :n5).
+
+:n41 a :NaturalNumber, :PrimeNumber;
+    rdf:value 41;
+    rdfs:label "forty-one"@en;
+    :roman "XLI";
+    :square :n1681;
+    :primeFactorization (:n41).
+
+:n42 a :NaturalNumber;
+    rdf:value 42;
+    rdfs:label "forty-two"@en;
+    :roman "XLII";
+    :square :n1764;
+    :primeFactorization (:n2 :n3 :n7).
+
+:n43 a :NaturalNumber, :PrimeNumber;
+    rdf:value 43;
+    rdfs:label "forty-three"@en;
+    :roman "XLIII";
+    :square :n1849;
+    :primeFactorization (:n43).
+
+:n44 a :NaturalNumber;
+    rdf:value 44;
+    rdfs:label "forty-four"@en;
+    :roman "XLIV";
+    :square :n1936;
+    :primeFactorization (:n2 :n2 :n11).
+
+:n45 a :NaturalNumber, :TriangularNumber;
+    rdf:value 45;
+    rdfs:label "forty-five"@en;
+    :roman "XLV";
+    :square :n2025;
+    :primeFactorization (:n3 :n3 :n5).
+
+:n46 a :NaturalNumber;
+    rdf:value 46;
+    rdfs:label "forty-six"@en;
+    :roman "XLVI";
+    :square :n2116;
+    :primeFactorization (:n2 :n23).
+
+:n47 a :NaturalNumber, :PrimeNumber;
+    rdf:value 47;
+    rdfs:label "forty-seven"@en;
+    :roman "XLVII";
+    :square :n2209;
+    :primeFactorization (:n47).
+
+:n48 a :NaturalNumber;
+    rdf:value 48;
+    rdfs:label "forty-eight"@en;
+    :roman "XLVIII";
+    :square :n2304;
+    :primeFactorization (:n2 :n2 :n2 :n2 :n3).
+
+:n49 a :NaturalNumber, :SquareNumber;
+    rdf:value 49;
+    rdfs:label "forty-nine"@en;
+    :roman "XLIX";
+    :square :n2401;
+    :primeFactorization (:n7 :n7).
+
+:n50 a :NaturalNumber;
+    rdf:value 50;
+    rdfs:label "fifty"@en;
+    :roman "L";
+    :square :n2500;
+    :primeFactorization (:n2 :n5 :n5).
+
+:n51 a :NaturalNumber;
+    rdf:value 51;
+    rdfs:label "fifty-one"@en;
+    :roman "LI";
+    :square :n2601;
+    :primeFactorization (:n3 :n17).
+
+:n52 a :NaturalNumber;
+    rdf:value 52;
+    rdfs:label "fifty-two"@en;
+    :roman "LII";
+    :square :n2704;
+    :primeFactorization (:n2 :n2 :n13).
+
+:n53 a :NaturalNumber, :PrimeNumber;
+    rdf:value 53;
+    rdfs:label "fifty-three"@en;
+    :roman "LIII";
+    :square :n2809;
+    :primeFactorization (:n53).
+
+:n54 a :NaturalNumber;
+    rdf:value 54;
+    rdfs:label "fifty-four"@en;
+    :roman "LIV";
+    :square :n2916;
+    :primeFactorization (:n2 :n3 :n3 :n3).
+
+:n55 a :NaturalNumber, :TriangularNumber;
+    rdf:value 55;
+    rdfs:label "fifty-five"@en;
+    :roman "LV";
+    :square :n3025;
+    :primeFactorization (:n5 :n11).
+
+:n56 a :NaturalNumber;
+    rdf:value 56;
+    rdfs:label "fifty-six"@en;
+    :roman "LVI";
+    :square :n3136;
+    :primeFactorization (:n2 :n2 :n2 :n7).
+
+:n57 a :NaturalNumber;
+    rdf:value 57;
+    rdfs:label "fifty-seven"@en;
+    :roman "LVII";
+    :square :n3249;
+    :primeFactorization (:n3 :n19).
+
+:n58 a :NaturalNumber;
+    rdf:value 58;
+    rdfs:label "fifty-eight"@en;
+    :roman "LVIII";
+    :square :n3364;
+    :primeFactorization (:n2 :n29).
+
+:n59 a :NaturalNumber, :PrimeNumber;
+    rdf:value 59;
+    rdfs:label "fifty-nine"@en;
+    :roman "LIX";
+    :square :n3481;
+    :primeFactorization (:n59).
+
+:n60 a :NaturalNumber;
+    rdf:value 60;
+    rdfs:label "sixty"@en;
+    :roman "LX";
+    :square :n3600;
+    :primeFactorization (:n2 :n2 :n3 :n5).
+
+:n61 a :NaturalNumber, :PrimeNumber;
+    rdf:value 61;
+    rdfs:label "sixty-one"@en;
+    :roman "LXI";
+    :square :n3721;
+    :primeFactorization (:n61).
+
+:n62 a :NaturalNumber;
+    rdf:value 62;
+    rdfs:label "sixty-two"@en;
+    :roman "LXII";
+    :square :n3844;
+    :primeFactorization (:n2 :n31).
+
+:n63 a :NaturalNumber;
+    rdf:value 63;
+    rdfs:label "sixty-three"@en;
+    :roman "LXIII";
+    :square :n3969;
+    :primeFactorization (:n3 :n3 :n7).
+
+:n64 a :NaturalNumber, :SquareNumber;
+    rdf:value 64;
+    rdfs:label "sixty-four"@en;
+    :roman "LXIV";
+    :square :n4096;
+    :primeFactorization (:n2 :n2 :n2 :n2 :n2 :n2).
+
+:n65 a :NaturalNumber;
+    rdf:value 65;
+    rdfs:label "sixty-five"@en;
+    :roman "LXV";
+    :square :n4225;
+    :primeFactorization (:n5 :n13).
+
+:n66 a :NaturalNumber, :TriangularNumber;
+    rdf:value 66;
+    rdfs:label "sixty-six"@en;
+    :roman "LXVI";
+    :square :n4356;
+    :primeFactorization (:n2 :n3 :n11).
+
+:n67 a :NaturalNumber, :PrimeNumber;
+    rdf:value 67;
+    rdfs:label "sixty-seven"@en;
+    :roman "LXVII";
+    :square :n4489;
+    :primeFactorization (:n67).
+
+:n68 a :NaturalNumber;
+    rdf:value 68;
+    rdfs:label "sixty-eight"@en;
+    :roman "LXVIII";
+    :square :n4624;
+    :primeFactorization (:n2 :n2 :n17).
+
+:n69 a :NaturalNumber;
+    rdf:value 69;
+    rdfs:label "sixty-nine"@en;
+    :roman "LXIX";
+    :square :n4761;
+    :primeFactorization (:n3 :n23).
+
+:n70 a :NaturalNumber;
+    rdf:value 70;
+    rdfs:label "seventy"@en;
+    :roman "LXX";
+    :square :n4900;
+    :primeFactorization (:n2 :n5 :n7).
+
+:n71 a :NaturalNumber, :PrimeNumber;
+    rdf:value 71;
+    rdfs:label "seventy-one"@en;
+    :roman "LXXI";
+    :square :n5041;
+    :primeFactorization (:n71).
+
+:n72 a :NaturalNumber;
+    rdf:value 72;
+    rdfs:label "seventy-two"@en;
+    :roman "LXXII";
+    :square :n5184;
+    :primeFactorization (:n2 :n2 :n2 :n3 :n3).
+
+:n73 a :NaturalNumber, :PrimeNumber;
+    rdf:value 73;
+    rdfs:label "seventy-three"@en;
+    :roman "LXXIII";
+    :square :n5329;
+    :primeFactorization (:n73).
+
+:n74 a :NaturalNumber;
+    rdf:value 74;
+    rdfs:label "seventy-four"@en;
+    :roman "LXXIV";
+    :square :n5476;
+    :primeFactorization (:n2 :n37).
+
+:n75 a :NaturalNumber;
+    rdf:value 75;
+    rdfs:label "seventy-five"@en;
+    :roman "LXXV";
+    :square :n5625;
+    :primeFactorization (:n3 :n5 :n5).
+
+:n76 a :NaturalNumber;
+    rdf:value 76;
+    rdfs:label "seventy-six"@en;
+    :roman "LXXVI";
+    :square :n5776;
+    :primeFactorization (:n2 :n2 :n19).
+
+:n77 a :NaturalNumber;
+    rdf:value 77;
+    rdfs:label "seventy-seven"@en;
+    :roman "LXXVII";
+    :square :n5929;
+    :primeFactorization (:n7 :n11).
+
+:n78 a :NaturalNumber, :TriangularNumber;
+    rdf:value 78;
+    rdfs:label "seventy-eight"@en;
+    :roman "LXXVIII";
+    :square :n6084;
+    :primeFactorization (:n2 :n3 :n13).
+
+:n79 a :NaturalNumber, :PrimeNumber;
+    rdf:value 79;
+    rdfs:label "seventy-nine"@en;
+    :roman "LXXIX";
+    :square :n6241;
+    :primeFactorization (:n79).
+
+:n80 a :NaturalNumber;
+    rdf:value 80;
+    rdfs:label "eighty"@en;
+    :roman "LXXX";
+    :square :n6400;
+    :primeFactorization (:n2 :n2 :n2 :n2 :n5).
+
+:n81 a :NaturalNumber, :SquareNumber;
+    rdf:value 81;
+    rdfs:label "eighty-one"@en;
+    :roman "LXXXI";
+    :square :n6561;
+    :primeFactorization (:n3 :n3 :n3 :n3).
+
+:n82 a :NaturalNumber;
+    rdf:value 82;
+    rdfs:label "eighty-two"@en;
+    :roman "LXXXII";
+    :square :n6724;
+    :primeFactorization (:n2 :n41).
+
+:n83 a :NaturalNumber, :PrimeNumber;
+    rdf:value 83;
+    rdfs:label "eighty-three"@en;
+    :roman "LXXXIII";
+    :square :n6889;
+    :primeFactorization (:n83).
+
+:n84 a :NaturalNumber;
+    rdf:value 84;
+    rdfs:label "eighty-four"@en;
+    :roman "LXXXIV";
+    :square :n7056;
+    :primeFactorization (:n2 :n2 :n3 :n7).
+
+:n85 a :NaturalNumber;
+    rdf:value 85;
+    rdfs:label "eighty-five"@en;
+    :roman "LXXXV";
+    :square :n7225;
+    :primeFactorization (:n5 :n17).
+
+:n86 a :NaturalNumber;
+    rdf:value 86;
+    rdfs:label "eighty-six"@en;
+    :roman "LXXXVI";
+    :square :n7396;
+    :primeFactorization (:n2 :n43).
+
+:n87 a :NaturalNumber;
+    rdf:value 87;
+    rdfs:label "eighty-seven"@en;
+    :roman "LXXXVII";
+    :square :n7569;
+    :primeFactorization (:n3 :n29).
+
+:n88 a :NaturalNumber;
+    rdf:value 88;
+    rdfs:label "eighty-eight"@en;
+    :roman "LXXXVIII";
+    :square :n7744;
+    :primeFactorization (:n2 :n2 :n2 :n11).
+
+:n89 a :NaturalNumber, :PrimeNumber;
+    rdf:value 89;
+    rdfs:label "eighty-nine"@en;
+    :roman "LXXXIX";
+    :square :n7921;
+    :primeFactorization (:n89).
+
+:n90 a :NaturalNumber;
+    rdf:value 90;
+    rdfs:label "ninety"@en;
+    :roman "XC";
+    :square :n8100;
+    :primeFactorization (:n2 :n3 :n3 :n5).
+
+:n91 a :NaturalNumber, :TriangularNumber;
+    rdf:value 91;
+    rdfs:label "ninety-one"@en;
+    :roman "XCI";
+    :square :n8281;
+    :primeFactorization (:n7 :n13).
+
+:n92 a :NaturalNumber;
+    rdf:value 92;
+    rdfs:label "ninety-two"@en;
+    :roman "XCII";
+    :square :n8464;
+    :primeFactorization (:n2 :n2 :n23).
+
+:n93 a :NaturalNumber;
+    rdf:value 93;
+    rdfs:label "ninety-three"@en;
+    :roman "XCIII";
+    :square :n8649;
+    :primeFactorization (:n3 :n31).
+
+:n94 a :NaturalNumber;
+    rdf:value 94;
+    rdfs:label "ninety-four"@en;
+    :roman "XCIV";
+    :square :n8836;
+    :primeFactorization (:n2 :n47).
+
+:n95 a :NaturalNumber;
+    rdf:value 95;
+    rdfs:label "ninety-five"@en;
+    :roman "XCV";
+    :square :n9025;
+    :primeFactorization (:n5 :n19).
+
+:n96 a :NaturalNumber;
+    rdf:value 96;
+    rdfs:label "ninety-six"@en;
+    :roman "XCVI";
+    :square :n9216;
+    :primeFactorization (:n2 :n2 :n2 :n2 :n2 :n3).
+
+:n97 a :NaturalNumber, :PrimeNumber;
+    rdf:value 97;
+    rdfs:label "ninety-seven"@en;
+    :roman "XCVII";
+    :square :n9409;
+    :primeFactorization (:n97).
+
+:n98 a :NaturalNumber;
+    rdf:value 98;
+    rdfs:label "ninety-eight"@en;
+    :roman "XCVIII";
+    :square :n9604;
+    :primeFactorization (:n2 :n7 :n7).
+
+:n99 a :NaturalNumber;
+    rdf:value 99;
+    rdfs:label "ninety-nine"@en;
+    :roman "XCIX";
+    :square :n9801;
+    :primeFactorization (:n3 :n3 :n11).
+
+:n100 a :NaturalNumber, :SquareNumber;
+    rdf:value 100;
+    rdfs:label "one hundred"@en;
+    :roman "C";
+    :square :n10000;
+    :primeFactorization (:n2 :n2 :n5 :n5).
+
+### End of Numbers
