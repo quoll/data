@@ -54,22 +54,28 @@
     rdfs:seeAlso <https://en.wikipedia.org/wiki/Perfect_number>, <http://dbpedia.org/resource/Perfect_number>.
 
 :roman rdfs:subPropertyOf skos:note ;
-    rdfs:label "Roman Numeral"
+    rdfs:label "Roman Numeral";
     rdfs:comment "The roman numeral represenation of a Natural number." ;
     rdfs:domain :NaturalNumber ;
     rdfs:range rdfs:Literal .
 
 :square a rdf:Property;
-    rdfs:label "Square"
+    rdfs:label "Square";
     rdfs:comment "The square of a number." ;
     rdfs:domain :Number ;
     rdfs:range :Number .
 
 :primeFactorization a rdf:Property;
-    rdfs:label "Factors"
+    rdfs:label "Factors";
     rdfs:comment "The prime factors of a natural number." ;
     rdfs:domain :NaturalNumber ;
     rdfs:range rdf:List .
+
+:quiz rdfs:subPropertyOf skos:note;
+    rdfs:label "Quiz Question";
+    rdfs:comment "Questions attached to resources.";
+    rdfs:domain rdfs:Resource;
+    rdfs:range rdfs:Literal.
 
 :n1 a :NaturalNumber, :SquareNumber;
     rdf:value 1;
@@ -97,38 +103,73 @@
         "Now, 15 = 3 × 5 and 77 = 7 × 11, but 2 can only be written as 2 = 1 × 2. Because of this, 2 is called a *prime number*. A prime number is a number that can't be written as any 2 whole numbers multiplied together except 1 and itself. Two is the only even prime number, because every other even number is divisible by 2, and so can't be prime.",
         "The early Greeks weren't sure whether 2 was a number at all, because it has a beginning and an end, but no middle. Being an even number it was considered female, the 1st *female number*, in fact.",
         "Yin and Yang are the 2 fundamental principles in the Chinese concept depicting the duality of life. Also, the 2 small sticks used in the I Ching are a binary system. Lots of religions are dualistic, like Zoroastrianism, the ancient Iranian religion with its Ahura Mazda, the god of light and goodness, and Ahriman, the dark, evil principle.",
-        "Of course, 2 is the basis of the *binary system*. In 1725 Basile Bouchon invented a device consisting of a roll of perforated paper punched with holes that could control the threads on a mechanical loom. The same idea was used in the pianola. Then Charles Babbage used the system in his Analytical Engine (also see 79). Thanks to binary notation, today's analytical engines can do all kinds of things, even make green stuff: ask Bill Gates.",
+        "Of course, 2 is the basis of the *binary system*. In 1725 Basile Bouchon invented a device consisting of a roll of perforated paper punched with holes that could control the threads on a mechanical loom. The same idea was used in the pianola. Then Charles Babbage used the system in his Analytical Engine (also see 79). Thanks to binary notation, today's analytical engines can do all kinds of things, even make green stuff: ask Bill Gates." ,
         "'You Only Live Twice' was sung by Nancy Sinatra and was the theme music to the James
 Bond movie of the same name. 'Two Tribes', released in 1984, was Frankie Goes to Hollywood's 2nd single. Like their 1st, 'Relax', it went better than Number 2 on the charts, getting to Number 1.",
-        "It takes 2 to tango, and 8 to quadrille, but you only need 1 buffoon in a cowboy hat to start people linedancing." .
+        "It takes 2 to tango, and 8 to quadrille, but you only need 1 buffoon in a cowboy hat to start people linedancing.";
+    dc:references :n79.
 
 :n3 a :NaturalNumber, :TriangularNumber, :PrimeNumber;
     rdf:value 3;
     rdfs:label "three"@en;
     :roman "III";
     :square :n9;
-    :primeFactorization (:n3).
+    :primeFactorization (:n3);
+    dc:description "Three is a Fibonacci number. The Fibonacci numbers are: 1, 1, 2, 3, 5, 8, 13, 21\u2026 Can you see the pattern? You add 2 numbers in a row to get the next number. The Fibonacci numbers are among the most famous and often-used numbers in mathematics. For more information, have a look at 8.";
+    skos:note "Three places claim to be home to the biggest egg in the world: Mentone, Indiana; Newberry, South Carolina; Winlock, Washington. No surprise, really, that they're all in the USA\u2026",
+        "Our spatial world has 3 dimensions (length, height and width) and we divide time into 3 (past, present and future). There are 3 primary colours (red, blue and yellow) and 3 states of matter (solid, liquid and gas). Hinduism has Brahma the Creator, Shiva the Destroyer and Vishnu the Sustainer; and Buddhism has the 3 classifications of teachings.",
+        "There is an easy way to check if a number is divisible by 3. If its digits add up to a number divisible by 3, then it can be divided by 3. There are no exceptions. So, we know that 39,123 is divisible by 3 because 3 + 9 + 1 + 2 + 3 = 18 and 18 = 3 × 6. In case you're wondering, 39,123 = 13,041 × 3.",
+        "Three is a popular number for girl pop groups. Think of Martha and the Vandellas, the Ronettes, the Pointer Sisters, the Supremes, TLC, Salt-N-Pepa - not forgetting that great 1980s girl group, Bananarama, and their immortal hit 'Robert De Niro's Waiting'. Christianity also has as its Big Three the Father, Son and Holy Spirit. Any link between this and Bananarama is tenuous at best.";
+    :quiz "Which of these 5 numbers is divisible by 3?\n281, 354, 962, 3742, 138 624 147",
+        "The basis of harmony in western music is the chord, the simplest of which is the triad. A basic triad consists of a root note, a 3rd and a 5th: 3 notes.";
+    dc:references :n8.
 
 :n4 a :NaturalNumber, :SquareNumber;
     rdf:value 4;
     rdfs:label "four"@en;
     :roman "IV";
     :square :n16;
-    :primeFactorization (:n2 :n2).
+    :primeFactorization (:n2 :n2) ;
+    dc:description "Because 4 = 2 × 2, it is the first square number. We say that 4 is '2 squared' and write this 4 = 2\u00b2. To explain this notation, if you were to write 5 × 5 × 5 you could also write it as 5\u00b3." ;
+    skos:note "Four is the perfect number for the Sioux of North America: they have 4 groups of gods, 4 species of animal, 4 ages of the human being and their medicine men advised people to do things in groups of 4." ,
+        "A strand of DNA is just a combination of 4 proteins - adenine, cytosine, guanine and thymine.",
+        "Four is the 1st composite number, that is, a number that can be divided by numbers other than itself and 1. Pythagoreans called numbers divisible by 4 'even-even', so they associated 4 with harmony and justice.",
+        "Some cultures' counting systems are base 4 (see 10 if you're not sure what that means): 4 fingers equal a hand and 4 hands equal a foot.",
+        "The 4 phases of the moon were the 1st means of keeping time, and the 4 cardinal points gave order to space. Albert Einstein's space-time is 4-dimensional, although later theorists have suggested that 4 dimensions are not enough.",
+        "In Mayan thought, everything is related to the 4 cardinal points, which were represented by a cross that touched the 4 horizons. In Christianity the 4 directions are represented by the 4 angels, which stand for God's power extending to the entire world. The cross obtained by connecting the 4 cardinal points was, in Ancient Egypt, the hieroglyph for immortality.",
+        "Among Indian gods, Brahma has 4 heads to symbolise the 4 directions of the world, while Shiva has 4 arms with which he destroys and recreates the world in his dance.",
+        "There are 4 prophets in the Old Testament and 4 rivers of paradise, which Christians believe prefigure the 4 Gospels of the New Testament. There are 4 sacred books in Islam: the Torah, Psalms, Gospel and Quran.",
+        "Chess players might like to know that the number of different ways of playing just the 1st 4 moves on each side in a game is 318 979 564 000.";
+    dc:references :n10 .
 
 :n5 a :NaturalNumber, :PrimeNumber;
     rdf:value 5;
     rdfs:label "five"@en;
     :roman "V";
     :square :n25;
-    :primeFactorization (:n5).
+    :primeFactorization (:n5) ;
+    dc:description "Anyone who's ever blown a few bucks playing Tetris has seen the 5 possible *tetrominoes*.
+A tetromino is a shape made by joining together 4 squares edge to edge, like this: ![Tetrominoes](http://commons.wikimedia.org/wiki/Special:FilePath/All_5_free_tetrominoes.svg)" ;
+    skos:note "In western and eastern cultures 5 is often the number of love, being an indivisible combination of the masculine 3 and the feminine 2. The pentagram is called the lovers' knot in English tradition, and 5 is the number of Venus, the goddess of love. Sexy!",
+        "Legend has it that Hippasos, the guy who discovered the *pentagondodecahedron*, which is the 5th geometrical body and consists of 12 regular pentagons, was drowned by the Pythagoreans for it. A pretty tough call for discovering a shape.",
+        "The Pentagon in Arlington, Virginia, containing most of the US Defense Department offices, has 5 sides, 5 storeys and 5 acres (2.025 hectares) in the middle. Now that's really sexy!",
+        "There are 5 notes in the pentatonic scale, which Celtic music is often based on.",
+        "Five members is the preferred number for all-boy harmony groups. Consider Backstreet Boys, Boyzone, 'N Sync, 5ive, Take That, New Kids on the Block etc. etc. The allocation of talent across the 5 members is traditionally 2 fantastic breakdancers; 1 guy who looks great in slacks; 1 moody, brooding loner (complete with nose ring and goatee beard); and 1 who can actually sing.";
+    :quiz "How many basic shapes can you make from 5 squares? These are called _pentominoes_. The squares must be joined edge to edge, and you can't count 2 shapes if they match when rotated and reflected." ;
+    rdfs:seeAlso <http://dbpedia.org/resource/Tetromino>, <http://commons.wikimedia.org/wiki/Special:FilePath/All_5_free_tetrominoes.svg>.
 
 :n6 a :NaturalNumber, :PerfectNumber, :TriangularNumber;
     rdf:value 6;
     rdfs:label "six"@en;
     :roman "VI";
     :square :n36;
-    :primeFactorization (:n2 :n3).
+    :primeFactorization (:n2 :n3) ;
+    dc:description "Six is a *perfect number*. Perfect numbers are numbers that are equal to the sum of their factors (not including themselves). So 6 can be written as 1 X 6 and 2 X 3. When we add the factors, 1 + 2 + 3 = 6." ;
+    skos:note "The 6-sided figure, the *hexagon*, is an important building principle in nature: beehives and snowflakes are constructed of hexagons.",
+        "There are 6 notes in the whole-tone scale, which is found in some eastern music. It's comprised of whole tones, in case you were wondering.",
+        "In the hit TV show of 1976-81 Charlie's Angels, there were 6 angels. Well, there were only 3 at a time, but there were 6 different angels over the 5 years that the show ran. They were: Kate Jackson, aka Sabrina Duncan; Farrah Fawcett, aka Jill Munroe; Jaclyn Smith, aka Kelly Garrett; Cheryl Ladd, aka Kris Munroe; Shelley Hack, aka Tiffany Welles; and Tanya Roberts, aka Julie Rogers. Why they never got all 6 together to take on some serious mega-villains I don't know.";
+    :quiz "What are the next 2 perfect numbers after 6?\nHint: the 2nd perfect number is between 20 and 40, and if you're feeling gutsy, the 3rd one is between 490 and 500. Good luck." ;
+    dc:references :n28.
 
 :n7 a :NaturalNumber, :PrimeNumber;
     rdf:value 7;
