@@ -176,28 +176,57 @@ A tetromino is a shape made by joining together 4 squares edge to edge, like thi
     rdfs:label "seven"@en;
     :roman "VII";
     :square :n49;
-    :primeFactorization (:n7).
+    :primeFactorization (:n7) ;
+    dc:description "Seven is a prime number, but because it is of the form 2\u207f - 1 (7 = 2\u00b3 - 1), where -U0001d45b is a prime number, it is called a *Mersenne prime*, after Father Marin Mersenne, a mathematician, philosopher and friend of Descartes. Mersenne primes are very rare indeed. Until recently only 37 had been discovered. Check out 31 for the 38th." ;
+    skos:note "Lust, pride, anger, envy, sloth, avarice and gluttony. Sounds like fun, eh? That's because the deadly sins are a *heptad*, of course: a series of 7 things. Other heptads include the colours of the rainbow (ROYGBIV - see also >40), the number of layers in the Mayan sky, and the number of planets in the Babylonian heavens. Seven is also the number of Mary's joys and of her sorrows in Christianity, and the number of hills in Rome. And that's just for starters (the 7-year itch, 7 years' bad luck, the 7 lives of an Iranian cat\u2026)." ,
+        "Seven is a popular word in movie titles: _Seven_ (1979), _Se7en_ (1995), _The Magnificent Seven_, _Seven Brides for Seven Brothers_, _The Seven Brothers Meet Dracula_, _Seven Doors to Death_ and _The Seven Samurai_ to name just a few. But one you won't forget is _The Seven Magnificent Gladiators_ (1984), starring the Incredible Hulk and some other, lesser-known Thespians." ,
+        "Vulcans, such as Spock in _Star Trek_, are sexually active just once every 7 years. Logical? Well, not to me." ;
+    :quiz "Find the next 2 Mersenne primes after 7.\nRemember, they must be of the form 2 - 1, where p is prime." ;
+    dc:references :31.
 
 :n8 a :NaturalNumber;
     rdf:value 8;
     rdfs:label "eight"@en;
     :roman "VIII";
     :square :n64;
-    :primeFactorization (:n2 :n2 :n2).
+    :primeFactorization (:n2 :n2 :n2) ;
+    dc:description "Eight is a Fibonacci number. Fibonacci, or Leonardo of Pisa, wrote a famous book called _Liber abaci_ in 1202, which included the 'rabbit problem'. If 2 rabbits give birth to a new pair each month, but the new pair don't breed until they re a month old, and the rabbits never die, how many pairs are alive each month? The answer is 1, 1, 2, 3, 5, 8, 13\u2026 - the Fibonacci numbers!";
+    skos:note "Ancient Greek mathematicians discovered that when you square every odd number above 1, you get a number that is a multiple of 8 plus 1. For example, 5\u00b2 = 25, which is 3 × 8 + 1.",
+        "Light takes 8 minutes to reach Earth from the sun.",
+        "In Islam there are 7 hells but 8 paradises, because God's mercy is greater than his wrath.",
+        "The average American uses 8 times as much fuel energy as the average person elsewhere in the world. The average man anywhere, just about, thinks about sex every 8 minutes.",
+        "The average person eating an average chocolate bar will not be pleased to hear that, on average, it will contain 8 insect legs. But that's nothing: the average human eats 8 spiders in their lifetime.",
+        "There are 8 notes in the diatonic scale, which most western musicians use, some better than others. Compare Beethoven, say, with the Backstreet Boys, for example.",
+        "And by the way, 8 = 2\u00b3, or '2 cubed'.".
 
 :n9 a :NaturalNumber, :SquareNumber;
     rdf:value 9;
     rdfs:label "nine"@en;
     :roman "IX";
     :square :n81;
-    :primeFactorization (:n3 :n3).
+    :primeFactorization (:n3 :n3) ;
+    dc:description "There is a simple test to find out whether a number can be divided by 9: if 9 divides the sum of the number's digits, the number is divisible by 9. So, for 279, 2 + 7 + 9 = 18, which is divisible by 9. And 279 = 31 × 9, so, yeah, it's divisible by 9.";
+    skos:note "Nine pops up all over the place. Troy was besieged for 9 years and Odysseus travelled for 9 years. In Ancient Mexican cultures there were 9 rivers in the lowest layer of the netherworld, while the River Styx in the netherworld of Ancient Greece had 9 twists.",
+        "China's netherworld also had 9 rivers, which were manifested in the 9-headed dragon, killed by the hero Yu, to whom the turtle then brought the 1st *magic square*, consisting of 9 numbers (see below), engraved on its back. In Chinese belief, the sky has 9 parts, the earth 9 countries, and each country 9 mountain ranges. The design of the Chinese capital, Beijing, consists of 8 streets leading to a centre (making 9).",
+        "The 1st 9 whole numbers, 1-9, can be arranged in a magic square so that all rows and both diagonals have the same sum: 15. This is the magic square brought on the turtle's back in Ancient Chinese myth, and it's called the Lo Shu.",
+        "Genghis Khan was attended by 9 yaks' tails (his standards) and people had to prostrate themselves before him 9 times. To be honest with you, despite the possible effect on my dignity, I'd have prostrated myself 999 times if Genghis had asked - he was just that sort of guy.",
+        "A cockroach can live for up to 9 days without its head before it starves to death.",
+        "In the 9th episode, called 'Nasty', of the 12 episodes of the UK comedy The Young Ones, Neil has a bath.",
+        "Incidentally, 9 = 3\u00b2.";
+    :quiz "There is really only 1 way to achieve the Lo Shu (there are variations, but they're essentially the same thing). What is it?" .
 
 :n10 a :NaturalNumber, :TriangularNumber;
     rdf:value 10;
     rdfs:label "ten"@en;
     :roman "X";
     :square :n100;
-    :primeFactorization (:n2 :n5).
+    :primeFactorization (:n2 :n5) ;
+    dc:description "Our number system is base 10. This means that after 10 numbers in a position, we move to the next place. So 37 means 3 lots of 10 and 7 lots of 1. If we used, say base 7, then the number 25 would be 2 × 7 + 5 × 1, which is 19 in our base 10.\nIn base 6, 312 would be 3 × 6 × 6 + 1 x 6 + 2 which is 116 in base 10.";
+    skos:note "For Pythagoreans, 10 was the all-embracing, all-limiting 'mother' number. Ten is a significant number in many cultures: Aristotle recognised 10 categories, Moses read 10 commandments, and Buddhism, too, has 10 commandments.",
+        "When a Roman army revolted, every 10th soldier was executed (that's how you decimate your troops).",
+        "Seventies punk legends The Sex Pistols played for a full 10 minutes at their 1st gig in London on 6 November 1975. They fitted a lot of notes into those 10 minutes, though.",
+        "10cc was the name of a seventies UK 'art-pop' band. They called themselves after the average amount of semen a male ejaculates at orgasm: 10 cubic centimetres. Other bands named after semen include Pearl Jam and The Lovin' Spoonful.",
+        "The average life of a human tastebud is 10 days, and much less if it comes into contact with my cooking.".
 
 :n11 a :NaturalNumber, :PrimeNumber;
     rdf:value 11;
